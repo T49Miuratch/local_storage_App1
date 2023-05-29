@@ -84,3 +84,16 @@ https://www.kondatekun.com/recipe/calorie.php
 
 ■消費カロリーの計算式：
 https://keisan.casio.jp/exec/system/1161228742
+
+#　コード関連
+
+https://www.sejuku.net/blog/57841
+
+htmlのselected
+https://dezanari.com/html-select-hidden-value/
+
+table
+https://csshtml.work/table-center/
+
+textbox
+https://pote-chil.com/html-maker/textbox
