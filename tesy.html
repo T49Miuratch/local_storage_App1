@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>てすと｜三浦流！寝ててもやせるダイエットカウンター</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Dela+Gothic+One&family=DotGothic16&family=Kaisei+Decol:wght@700&family=RocknRoll+One&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<main>
+
+<div id="stitle">超簡単・三浦流！<br>寝ててもやせる<br>ダイエットカウンター</div>
+
+<div id="intro">
+
+    本サービスで着目したのは「基礎代謝」です。人間は運動をしなくても基本的な生命維持だけでカロリーを消費します。
+    夜寝て、朝起きるだけで体重は減っています。自分自身の基礎代謝を理解した上で食事量や運動量を考えるための「見える化」サービスです。
+
+</div>
+
+<body>
+<table>
+    <tr><th><label for="namae">名前</label></th><td><input type="text" id="namae"></td></tr>
+
+    <tr><th>性別</th><td>
+
+        <label for="male">男性</label><input type="radio" name="gender" value="male" checked>
+        <label for="female">女性</label><input type="radio" name="gender" value="female">
+    
+    </td></tr>
+
+    <tr><th><label for="height">身長(cm)</label></th><td><input type="number" id="height">cm</td></tr>
+    <tr><th><label for="weight">体重(kg)</label></th><td><input type="number" id="weight">kg</td></tr>
+    <tr><th><label for="age">年齢</label></th><td><input type="number" id="age">才</td></tr>
+
+    <tr>
+        <td><button id="saveButton">保存</button></td>
+        <td><button id="clearButton">クリア</button></td>
+    </tr>
+
+    <tr><th><label for="result">計算<br>結果</label></th><td><span id="result"></span>kcal</td></tr>
+
+</table>
+    
+    
+            <table id="list" class="log_table">
+                <tr>
+                    <th>計測日</th>
+                    <th>名前</th>
+                    <th>性別</th>
+                    <th>年齢</th>
+                    <th>身長</th>
+                    <th>体重</th>
+                    <th>基礎代謝</th>
+                </tr>
+            
+                <!-- ここに追加データが挿入される -->
+    
+            </table>
+
+
+<!-- jQueryのライブラリを読み込む -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- JavaScriptのコードを読み込む -->
+<script src="js/diet.js"></script>
+
+</body>
+</html>

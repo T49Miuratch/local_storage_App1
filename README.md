@@ -97,3 +97,9 @@ https://csshtml.work/table-center/
 
 textbox
 https://pote-chil.com/html-maker/textbox
+
+ラジオボタン
+https://kiomiru.co.jp/blog/coding/radio-checkbox/
+
+プルダウンメニュー
+https://www.tagindex.com/html/form/select.html
