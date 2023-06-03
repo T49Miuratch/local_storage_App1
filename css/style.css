@@ -8,6 +8,12 @@ font-family: 'RocknRoll One', sans-serif;
 font-family: 'Zen Kaku Gothic New', sans-serif;
 */
 
+#illust{
+
+text-align: center;
+
+}
+
 /* 基礎代謝計算ボタン */
 
 .bmr_btn{
@@ -339,11 +345,11 @@ textarea{
 
 table{
 
-    background-color: #e1efff;
+    background-color: #ffaaaa;
     border: 0px solid #ccc;
     border-radius: 20px;
     width: 620px;
-    margin:auto;
+    margin-top: 40px;
     padding: 0px ;
     font-size: large;
     font-family: 'Zen Kaku Gothic New', sans-serif;
@@ -358,7 +364,7 @@ th{
     padding-right: 10px;
     height: 60px;               /* 高さ指定 */
     font-size:20px;
-    width: 60px;
+    width: 160px;
 
 }
 
@@ -383,9 +389,9 @@ table.bmr_table{
     margin-top: 20px;
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 30px;
+    padding-top: 130px;
     padding-bottom: 30px;
-    font-size: large;
+    font-size: 10px;
     font-family: 'Zen Kaku Gothic New', sans-serif;
     text-align: center;
     align-items: center;
@@ -399,7 +405,6 @@ th.bmr_table{
     height: 60px;               /* 高さ指定 */
     padding-left: 20px;
     padding-right: 20px;
-    width:30%;
     font-size:24px;
 }
 

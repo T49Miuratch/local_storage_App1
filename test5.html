@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>カロリー計算</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <table>
+    <tr>
+      <td>名前</td>
+      <td><input type="text" id="name"></td>
+    </tr>
+    <tr>
+      <td>性別</td>
+      <td>
+        <select id="gender">
+          <option value="男性">男性</option>
+          <option value="女性">女性</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>身長(cm)</td>
+      <td><input type="number" id="height"></td>
+    </tr>
+    <tr>
+      <td>体重(kg)</td>
+      <td><input type="number" id="weight"></td>
+    </tr>
+    <tr>
+      <td>年齢</td>
+      <td><input type="number" id="age"></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <hr>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button onclick="calculateA()">計算A</button></td>
+    </tr>
+    <tr>
+      <td>計算結果(A)</td>
+      <td id="resultA"></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <hr>
+      </td>
+    </tr>
+    <tr>
+      <td>移動</td>
+      <td>
+        <select id="movement">
+          <option value="0">移動なし（0）</option>
+          <option value="50">徒歩15分（50）</option>
+          <option value="70">自転車15分（70）</option>
+          <option value="15">自動車15分（15）</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>仕事</td>
+      <td>
+        <select id="work">
+          <option value="400">デスクワーク8時間（400）</option>
+          <option value="600">立ち仕事8時間（600）</option>
+          <option value="800">フィールドワーク8時間（800）</option>
+          <option value="2400">職人仕事8時間（2400）</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>運動</td>
+      <td>
+        <select id="exercise">
+          <option value="0">運動なし（0）</option>
+          <option value="200">ジム30分（200）</option>
+          <option value="600">水泳30分（600）</option>
+          <option value="200">走る30分（200）</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button onclick="calculateB()">計算B</button></td>
+    </tr>
+    <tr>
+      <td>計算結果(B)</td>
+      <td id="resultB"></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <hr>
+      </td>
+    </tr>
+    <tr>
+      <td>朝食</td>
+      <td>
+        <select id="breakfast">
+          <option value="0">朝食抜き（0）</option>
+          <option value="150">ちょっと（150）</option>
+          <option value="350">かるく（350）</option>
+          <option value="700">ふつうに（700）</option>
+          <option value="1000">ガッツリ（1000）</option>
+          <option value="1500">デカ盛り（1500）</option>
+          <option value="2000">彦麿呂（2000）</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>昼食</td>
+      <td>
+        <select id="lunch">
+          <option value="0">昼食抜き（0）</option>
+          <option value="150">ちょっと（150）</option>
+          <option value="350">かるく（350）</option>
+          <option value="700">ふつうに（700）</option>
+          <option value="1000">ガッツリ（1000）</option>
+          <option value="1500">デカ盛り（1500）</option>
+          <option value="2000">彦麿呂（2000）</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>夕食</td>
+      <td>
+        <select id="dinner">
+          <option value="0">夕食抜き（0）</option>
+          <option value="150">ちょっと（150）</option>
+          <option value="350">かるく（350）</option>
+          <option value="700">ふつうに（700）</option>
+          <option value="1000">ガッツリ（1000）</option>
+          <option value="1500">デカ盛り（1500）</option>
+          <option value="2000">彦麿呂（2000）</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>間食</td>
+      <td>
+        <select id="snack">
+          <option value="0">おやつ抜き（0）</option>
+          <option value="150">ちょっと（150）</option>
+          <option value="350">かるく（350）</option>
+          <option value="700">ふつうに（700）</option>
+          <option value="1000">ガッツリ（1000）</option>
+          <option value="1500">デカ盛り（1500）</option>
+          <option value="2000">彦麿呂（2000）</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button onclick="calculateC()">計算C</button></td>
+    </tr>
+    <tr>
+      <td>計算結果(C)</td>
+      <td id="resultC"></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <hr>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button onclick="calculateD()">全計算</button></td>
+    </tr>
+    <tr>
+      <td>計算結果(D)</td>
+      <td id="resultD"></td>
+    </tr>
+    <tr>
+      <td>メッセージ(E)</td>
+      <td id="messageE"></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <hr>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button onclick="saveResult()">保存</button></td>
+    </tr>
+    <tr>
+      <td>保存結果</td>
+      <td id="savedResults"></td>
+    </tr>
+  </table>
+
+  <script>
+    function calculateA() {
+      var gender = $("#gender").val();
+      var weight = $("#weight").val();
+      var height = $("#height").val();
+      var age = $("#age").val();
+
+      var resultA;
+      if (gender === "男性") {
+        resultA = Math.ceil(13.397 * weight + 4.799 * height - 5.677 * age + 88.362);
+      } else {
+        resultA = Math.ceil(9.247 * weight + 3.098 * height - 4.33 * age + 447.593);
+      }
+
+      $("#resultA").text(resultA);
+    }
+
+    function calculateB() {
+      var movement = Number($("#movement").val());
+      var work = Number($("#work").val());
+      var exercise = Number($("#exercise").val());
+
+      var resultB = movement + work + exercise;
+
+      $("#resultB").text(resultB);
+    }
+
+    function calculateC() {
+      var breakfast = Number($("#breakfast").val());
+      var lunch = Number($("#lunch").val());
+      var dinner = Number($("#dinner").val());
+      var snack = Number($("#snack").val());
+
+      var resultC = breakfast + lunch + dinner + snack;
+
+      $("#resultC").text(resultC);
+    }
+
+    function calculateD() {
+      var resultA = Number($("#resultA").text());
+      var resultB = Number($("#resultB").text());
+      var resultC = Number($("#resultC").text());
+
+      var resultD = resultA + resultB - resultC;
+
+      $("#resultD").text(resultD);
+
+      var messageE;
+      if (resultD >= 500) {
+        messageE = "まだヨユー";
+      } else if (resultD >= 150) {
+        messageE = "ギリセーフ";
+      } else if (resultD >= 0) {
+        messageE = "ギリ！";
+      } else if (resultD >= -500) {
+        messageE = "デブ！";
+      } else {
+        messageE = "超デブ！";
+      }
+
+      $("#messageE").text(messageE);
+    }
+
+    function saveResult() {
+      var name = $("#name").val();
+      var resultA = $("#resultA").text();
+      var resultB = $("#resultB").text();
+      var resultC = $("#resultC").text();
+      var resultD = $("#resultD").text();
+
+      var savedResults = name + ": A=" + resultA + ", B=" + resultB + ", C=" + resultC + ", D=" + resultD;
+
+      $("#savedResults").append(savedResults + "<br>");
+    }
+  </script>
+</body>
+</html>
