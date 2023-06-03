@@ -1,0 +1,22 @@
+table {
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+  }
+
+  button {
+    margin-top: 10px;
+  }
+
+  #savedResults li {
+    margin-bottom: 5px;
+  }
+
+  #clearResults {
+    margin-top: 10px;
+  }

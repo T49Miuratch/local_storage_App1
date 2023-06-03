@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>超簡単・三浦流！寝ててもやせるダイエットカウンター</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Dela+Gothic+One&family=DotGothic16&family=Kaisei+Decol:wght@700&family=RocknRoll+One&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+  <div class="container">
+    <div id="stitle">超簡単・三浦流！<br>寝ててもやせる<br>ダイエットカウンター</div>
+
+<div id="intro">
+
+    本サービスで着目したのは「基礎代謝」です。人間は運動をしなくても基本的な生命維持だけでカロリーを消費します。
+    夜寝て、朝起きるだけで体重は減っています。自分自身の基礎代謝を理解した上で食事量や運動量を考えるための「見える化」サービスです。
+
+</div>
+
+  <table>
+    <tr>
+      <th>項目</th>
+      <th>入力欄</th>
+    </tr>
+    <tr>
+      <td>名前</td>
+      <td><input type="text" id="name"></td>
+    </tr>
+    <tr>
+      <td>性別</td>
+      <td>
+        <select id="gender">
+          <option value="男性">男性</option>
+          <option value="女性">女性</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>身長(cm)</td>
+      <td><input type="number" id="height"></td>
+    </tr>
+    <tr>
+      <td>体重(kg)</td>
+      <td><input type="number" id="weight"></td>
+    </tr>
+    <tr>
+      <td>年齢</td>
+      <td><input type="number" id="age"></td>
+    </tr>
+  </table>
+  <button onclick="calculateA()">計算A</button>
+  <p id="resultA"></p>
+
+  <table>
+    <tr>
+      <th>項目</th>
+      <th>数値</th>
+    </tr>
+    <tr>
+      <td>移動</td>
+      <td>
+        <select id="movement">
+          <option value="0">移動なし</option>
+          <option value="50">徒歩15分</option>
+          <option value="70">自転車15分</option>
+          <option value="15">自動車15分</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>仕事</td>
+      <td>
+        <select id="work">
+          <option value="400">デスクワーク8時間</option>
+          <option value="600">立ち仕事8時間</option>
+          <option value="800">フィールドワーク8時間</option>
+          <option value="2400">職人仕事8時間</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>運動</td>
+      <td>
+        <select id="exercise">
+          <option value="0">運動なし</option>
+          <option value="200">ジム30分</option>
+          <option value="600">水泳30分</option>
+          <option value="200">走る30分</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+  <button onclick="calculateB()">計算B</button>
+  <p id="resultB"></p>
+
+  <table>
+    <tr>
+      <th>項目</th>
+      <th>数値</th>
+    </tr>
+    <tr>
+      <td>朝食</td>
+      <td>
+        <select id="breakfast">
+          <option value="0">朝食抜き</option>
+          <option value="150">ちょっと</option>
+          <option value="350">かるく</option>
+          <option value="700">ふつうに</option>
+          <option value="1000">ガッツリ</option>
+          <option value="1500">デカ盛り</option>
+          <option value="2000">彦麿呂</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>昼食</td>
+      <td>
+        <select id="lunch">
+          <option value="0">昼食抜き</option>
+          <option value="150">ちょっと</option>
+          <option value="350">かるく</option>
+          <option value="700">ふつうに</option>
+          <option value="1000">ガッツリ</option>
+          <option value="1500">デカ盛り</option>
+          <option value="2000">彦麿呂</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>夕食</td>
+      <td>
+        <select id="dinner">
+          <option value="0">夕食抜き</option>
+          <option value="150">ちょっと</option>
+          <option value="350">かるく</option>
+          <option value="700">ふつうに</option>
+          <option value="1000">ガッツリ</option>
+          <option value="1500">デカ盛り</option>
+          <option value="2000">彦麿呂</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>間食</td>
+      <td>
+        <select id="snack">
+          <option value="0">おやつ抜き</option>
+          <option value="150">ちょっと</option>
+          <option value="350">かるく</option>
+          <option value="700">ふつうに</option>
+          <option value="1000">ガッツリ</option>
+          <option value="1500">デカ盛り</option>
+          <option value="2000">彦麿呂</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+  <button onclick="calculateC()">計算C</button>
+  <p id="resultC"></p>
+
+  <button onclick="calculateD()">全計算</button>
+  <p id="resultD"></p>
+
+  <p id="messageE"></p>
+
+  <button onclick="saveResult()">保存</button>
+  <ul id="savedResults"></ul>
+  <button id="clearResults">保存結果の削除</button>
+
+  <script>
+    // カロリー計算の関数
+    function calculateA() {
+      var gender = $("#gender").val();
+      var weight = parseInt($("#weight").val());
+      var height = parseInt($("#height").val());
+      var age = parseInt($("#age").val());
+
+      var resultA = 0;
+
+      if (gender === "男性") {
+        resultA = Math.ceil(13.397 * weight + 4.799 * height - 5.677 * age + 88.362);
+      } else {
+        resultA = Math.ceil(9.247 * weight + 3.098 * height - 4.33 * age + 447.593);
+      }
+
+      $("#resultA").text("計算結果(A): " + resultA);
+    }
+
+    function calculateB() {
+      var movement = parseInt($("#movement").val());
+      var work = parseInt($("#work").val());
+      var exercise = parseInt($("#exercise").val());
+
+      var resultB = movement + work + exercise;
+
+      $("#resultB").text("計算結果(B): " + resultB);
+    }
+
+    function calculateC() {
+      var breakfast = parseInt($("#breakfast").val());
+      var lunch = parseInt($("#lunch").val());
+      var dinner = parseInt($("#dinner").val());
+      var snack = parseInt($("#snack").val());
+
+      var resultC = breakfast + lunch + dinner + snack;
+
+      $("#resultC").text("計算結果(C): " + resultC);
+    }
+
+    function calculateD() {
+      var resultA = parseInt($("#resultA").text().split(":")[1].trim());
+      var resultB = parseInt($("#resultB").text().split(":")[1].trim());
+      var resultC = parseInt($("#resultC").text().split(":")[1].trim());
+
+      var resultD = resultA + resultB - resultC;
+
+      $("#resultD").text("計算結果(D): " + resultD);
+
+      var messageE = "";
+      if (resultD >= 500) {
+        messageE = "まだヨユー";
+      } else if (resultD >= 150) {
+        messageE = "ギリセーフ";
+      } else if (resultD >= 0) {
+        messageE = "ギリ！";
+      } else if (resultD >= -500) {
+        messageE = "デブ！";
+      } else {
+        messageE = "超デブ！";
+      }
+
+      $("#messageE").text("メッセージ(E): " + messageE);
+    }
+
+    // 結果の保存と表示
+    function saveResult() {
+      var currentTime = new Date();
+      var timestamp = currentTime.getFullYear() + "/" + (currentTime.getMonth() + 1) + "/" + currentTime.getDate() + " " + currentTime.getHours() + ":" + currentTime.getMinutes();
+      var name = $("#name").val();
+      var resultA = parseInt($("#resultA").text().split(":")[1].trim());
+      var resultB = parseInt($("#resultB").text().split(":")[1].trim());
+      var resultC = parseInt($("#resultC").text().split(":")[1].trim());
+      var resultD = parseInt($("#resultD").text().split(":")[1].trim());
+      var messageE = $("#messageE").text().split(":")[1].trim();
+
+      var resultText = timestamp + " | 名前: " + name + " | 計算結果(A): " + resultA + " | 計算結果(B): " + resultB + " | 計算結果(C): " + resultC + " | 計算結果(D): " + resultD + " | メッセージ(E): " + messageE;
+
+      var li = $("<li>").text(resultText);
+      $("#savedResults").append(li);
+
+      $("#name").val("");
+      $("#resultA").text("");
+      $("#resultB").text("");
+      $("#resultC").text("");
+      $("#resultD").text("");
+      $("#messageE").text("");
+    }
+
+    // 保存結果の削除
+    $("#clearResults").click(function() {
+      $("#savedResults").empty();
+    });
+  </script>
+</body>
+</html>

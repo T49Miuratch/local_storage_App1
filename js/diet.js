@@ -152,14 +152,14 @@ $("#saveButton").on("click", function(){
 //     //ローカルストレージへの保存
     
     
-//     //2.clear クリックイベント
+    //2.clear クリックイベント
     
-//     $("#clear").on("click",function(){
+    $("#clear").on("click",function(){
     
-//         localStorage.clear();
-//         $("#list").empty();
+        localStorage.clear();
+        $("#list").empty();
     
-//     });
+    });
     
 //     //2.2.5.list clear クリックイベント
     
